@@ -1,5 +1,5 @@
 import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
-import { blue, deepOrange, deepPurple, orange } from "@mui/material/colors";
+import { blue, deepOrange, deepPurple, orange, teal } from "@mui/material/colors";
 
 const APP_BAR_HEIGHT = "58px";
 const BOARD_BAR_HEIGHT = "60px";
@@ -56,7 +56,7 @@ const theme = extendTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderWidth: "0.5px",
+          borderWidth: "0.5px", 
         },
       },
     },
