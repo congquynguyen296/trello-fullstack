@@ -7,7 +7,9 @@ import Select from "@mui/material/Select";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkMode";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
-import { Box } from "@mui/material";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import theme from "./theme";
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme();
@@ -28,23 +30,22 @@ function ModeSelect() {
         onChange={handleChange}
       >
         <MenuItem value="light">
-          <div
-            className="div"
-            style={{
+          <Box
+            sx={{
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: 2,
             }}
           >
             <LightModeIcon fontSize="small" /> Light
-          </div>
+          </Box>
         </MenuItem>
         <MenuItem value="dark">
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: 2,
             }}
           >
             <DarkModeOutlinedIcon fontSize="small" /> Dark
@@ -55,7 +56,7 @@ function ModeSelect() {
             sx={{
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: 2,
             }}
           >
             <SettingsBrightnessIcon fontSize="small" /> System
@@ -68,10 +69,47 @@ function ModeSelect() {
 
 function App() {
   return (
-    <>
+    <Container maxWidth={false} disableGutters sx={{ height: "100vh" }}>
       <hr />
-      <ModeSelect />
-    </>
+      <Box
+        sx={{
+          backgroundColor: "primary.light",
+          width: "100%",
+          height: theme.trello.appBarHeight,
+          display: "flex",
+          justifyContent: "flex",
+          alignItems: "center",
+        }}
+      >
+        <ModeSelect />
+      </Box>
+
+      <Box
+        sx={{
+          backgroundColor: "primary.dark",
+          width: "100%",
+          height: theme.trello.boardBarHeight,
+          display: "flex",
+          justifyContent: "flex",
+          alignItems: "center",
+        }}
+      >
+        Board bar
+      </Box>
+
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          width: "100%",
+          height: theme.trello.boardContentHeight,
+          display: "flex",
+          justifyContent: "flex",
+          alignItems: "center",
+        }}
+      >
+        Board content
+      </Box>
+    </Container>
   );
 }
 
