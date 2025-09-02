@@ -1,0 +1,1 @@
+// Detail for each user
